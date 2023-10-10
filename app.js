@@ -61,7 +61,7 @@ app.get('/', (req, res)=>{
 });
 
 //set up using all routers
-app.use('/', gameRoutes);
+//app.use('/', testRoutes);
 
 //error handling
 app.use((req, res, next)=> {

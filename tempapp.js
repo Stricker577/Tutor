@@ -12,7 +12,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Serve the index.ejs file when the root URL is accessed
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Hello World' });
+    res.render('index');
 });
 
 const PORT = 3000;

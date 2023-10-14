@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 
-//const route = require('./routes/blankroute');
+const navRoutes = require('./routes/navRoutes');
 
 //create the app
 const app = express();
@@ -19,7 +19,7 @@ let host = 'localhost';
 app.set('view engine', 'ejs');
 
 //connect to database
-mongoose.connect('mongodb://127.0.0.1:27017/test', 
+mongoose.connect('mongodb://127.0.0.1:27017/tutor', 
             {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() =>{
     //start the server
@@ -35,14 +35,13 @@ app.use(
         secret: "ajfeirf90aeu9eroejfoefj",
         resave: false,
         saveUninitialized: false,
-        store: new MongoStore({mongoUrl: 'mongodb://127.0.0.1:27017/test'}),
+        store: new MongoStore({mongoUrl: 'mongodb://127.0.0.1:27017/tutor'}),
         cookie: {maxAge: 60*60*1000}
         })
 );
 app.use(flash());
 
 app.use((req, res, next) => {
-    //console.log(req.session);
     res.locals.user = req.session.user||null;
     res.locals.errorMessages = req.flash('error');
     res.locals.successMessages = req.flash('success');
@@ -61,7 +60,7 @@ app.get('/', (req, res)=>{
 });
 
 //set up using all routers
-//app.use('/', testRoutes);
+app.use('/', navRoutes);
 
 //error handling
 app.use((req, res, next)=> {

@@ -10,13 +10,14 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static('public'));
+
 // Serve the index.ejs file when the root URL is accessed
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('navigation/about');
 });
 
 const PORT = 3000;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
-});
-
+}); 

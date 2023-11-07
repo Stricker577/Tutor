@@ -1,10 +1,56 @@
-<%- include('./partials/header.ejs')%>
-  <main>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="sign-in-page">
+      <div class="group-wrapper">
+          <img class="logo" src="/images/logo.png" />
+            <button onclick="document.getElementById('id01').style.display='block'" class="log-in">Log In</button>
+            <button class="create-account">Create Account</button>
+      </div>
+    </div>
 
-    <body>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <p>Welcome to the basic EJS template!</p>
-    </body>
-  </main>
-  <%- include('./partials/footer.ejs')%>
+    <div id="id01" class="modal">
+  
+      <! -- Need to Change Post information here  -->
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="/images/logo.png" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+            
+          <button type="submit">Login</button>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+      </script>
+
+    <%- include('./partials/footer.ejs')%>
+  </body>
+</html>

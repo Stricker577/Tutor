@@ -1,0 +1,31 @@
+body, html{
+    height: 100%;
+    margin: 0;
+  }
+
+.sign-up{
+    width: 75%;
+    height: 65%;
+    text-align: center;
+    position:fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.grid-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 3%;
+    border: 1px solid #888;
+}
+
+.grid-item{
+   display:block;
+  text-align: left;
+}
+
+textarea{
+    border: 1px solid #888;
+
+}

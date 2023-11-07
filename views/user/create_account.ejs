@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs')%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/create_account.css" />
+  </head>
+  <body>
+    <div class="home-page">
+      <div class = "sign-up">
+        <div class = "grid-container">
+          <div class="grid-item">
+            <img class="photo" src="/images/profile.jpg" />
+            <form action="/action_page.php">
+              <label for="img">Upload Photo:</label>
+              <input type="file" id="img" name="img" accept="image/*">
+            </form>          
+          </div>
+          <div class="grid-item">
+            <form action="/action_page.php">
+            
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <label for="courses"><b>Courses</b></label>
+                <input type="text" placeholder="Enter Courses" name="courses">
+
+                <label for="bio"><b>Bio</b></label>
+                <textarea id="bio" name="bio" rows="5" cols="100"></textarea>
+                
+            
+                <div class="clearfix">
+                  <button type="submit" class="signupbtn">Create Account</button>
+                </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<%- include('../partials/footer.ejs')%>

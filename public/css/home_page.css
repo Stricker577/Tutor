@@ -1,0 +1,44 @@
+body, html{
+    height: 100%;
+    margin: 0;
+  }
+
+
+.grid-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+  }
+  .grid-item {
+    display: block;
+    font-size: 30px;
+    padding: 20px;
+  }
+  
+  .button-img, .img{
+    width:350px;
+    height:300px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    margin-bottom: 3%;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+  }
+
+  .button-text {
+    width: 350px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #368f4f;
+    box-shadow: 0px 4px 4px #00000040;
+    -webkit-text-stroke: 1px #000000;
+    font-family: "Hind-Regular", Helvetica;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: normal;
+  }

@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 // Serve the index.ejs file when the root URL is accessed
 app.get('/', (req, res) => {
-    res.render('navigation/about');
+    res.render('index');
 });
 
 const PORT = 3000;

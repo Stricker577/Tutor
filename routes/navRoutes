@@ -6,10 +6,4 @@ const router = express.Router();
 //GET /Index: home page
 router.get('/', controller.index);
 
-//GET /Index: home page
-router.get('/about', controller.about);
-
-//GET /Index: home page
-router.get('/home', controller.home);
-
 module.exports = router;

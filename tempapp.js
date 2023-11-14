@@ -1,6 +1,7 @@
 //first install express via the following
 //npm install express ejs
 
+const navRoutes = require('./routes/navRoutes');
 const express = require('express');
 const path = require('path');
 

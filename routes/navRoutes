@@ -6,4 +6,16 @@ const router = express.Router();
 //GET /Index: home page
 router.get('/', controller.index);
 
+//GET /Index: about page
+router.get('/about', controller.about);
+
+
+//GET /Index: contact page
+router.get('/contact', controller.contact);
+
+
+//GET /Index: about page
+router.get('/home_page', controller.home_page);
+
+
 module.exports = router;

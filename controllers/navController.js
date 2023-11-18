@@ -4,5 +4,13 @@ exports.index = (req, res)=>{
 }
 
 exports.about = (req, res)=>{
-    res.render('./about');
+    res.render('navigation/about');
+}
+
+exports.contact = (req, res)=>{
+    res.render('navigation/contact');
+}
+
+exports.home_page = (req, res)=>{
+    res.render('navigation/home_page');
 }

@@ -1,0 +1,42 @@
+body, html{
+    height: 100%;
+    margin: 0;
+  }
+
+
+.grid-container {
+    text-align: center;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+    margin: 20px;
+  }
+
+  .grid-item {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 275px auto;
+    font-size: 30px;
+  }
+
+  .examples{
+    font-family: "Hind-Regular", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  }
+  .img{
+    width:250px;
+    height:225px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+  }

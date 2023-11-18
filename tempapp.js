@@ -15,7 +15,7 @@ app.use(express.static('public'));
 
 // Serve the index.ejs file when the root URL is accessed
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('navigation/contact');
 });
 
 //set up using all routers

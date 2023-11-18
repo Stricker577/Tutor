@@ -1,0 +1,7 @@
+use gameconnect
+db.createCollection("groups")
+db.createCollection("sessions")
+
+db.groups.insertOne({
+    
+})

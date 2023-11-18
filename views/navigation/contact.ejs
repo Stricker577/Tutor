@@ -1,8 +1,16 @@
 <%- include('../partials/header.ejs')%>
-    <main>
-      <div class="content">
-        <!--Add the primary details of the page-->
-        <h1>Tutor Test!</h1>
-      </div>
-    </main>
+  <body>
+    <form action="/send-email" method="post">
+      <label for="recipientEmail">Recipient Email:</label>
+      <input type="email" id="recipientEmail" name="recipientEmail" required>
+      
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Send Email</button>
+    </form>
+  </body>
 <%- include('../partials/footer.ejs')%>

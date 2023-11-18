@@ -7,7 +7,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
-
 const navRoutes = require('./routes/navRoutes');
 
 //create the app

@@ -1,6 +1,6 @@
 //index page for the website
 exports.index = (req, res)=>{
-    res.render('./index');
+    res.render('./index', { userinfo: req.user });
 }
 
 exports.about = (req, res)=>{

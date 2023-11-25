@@ -7,7 +7,13 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+require('./config/passportConfig')(passport);
+
+//configure routers
 const navRoutes = require('./routes/navRoutes');
+const authRoutes = require('./routes/authRoutes');
+const indexRoutes = require('./routes/indexRoutes');
 
 //create the app
 const app = express();
@@ -28,10 +34,14 @@ mongoose.connect('mongodb://127.0.0.1:27017/tutor',
 })
 .catch(err=>console.log(err.message));
 
+//passport config
+app.use(express.urlencoded({extended:true}))
+app.use(express.static('public'))
+
 //mount middlware
 app.use(
     session({
-        secret: "ajfeirf90aeu9eroejfoefj",
+        secret: 'ajfeirf90aeu9eroejfoefj',
         resave: false,
         saveUninitialized: false,
         store: new MongoStore({mongoUrl: 'mongodb://127.0.0.1:27017/tutor'}),
@@ -39,6 +49,9 @@ app.use(
         })
 );
 app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use((req, res, next) => {
     res.locals.user = req.session.user||null;
@@ -60,6 +73,8 @@ app.get('/', (req, res)=>{
 
 //set up using all routers
 app.use('/', navRoutes);
+app.use('/', indexRoutes);
+app.use('/', authRoutes);
 
 //error handling
 app.use((req, res, next)=> {

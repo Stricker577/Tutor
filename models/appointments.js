@@ -7,7 +7,7 @@ const AppointmentSchema = new Schema({
         ref: 'Students',
         required: [true, 'Student is required']
     },
-    courses: {type: Array, required: [true, 'Courses are required']},
+    courses: {type: String, required: [true, 'Courses are required']},
     date: {type: Date, required: [true, 'Date is required']},
     author: {type: Schema.Types.ObjectId, ref:'User'}
 },

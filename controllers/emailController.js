@@ -1,3 +1,5 @@
+//Delete unused code?
+
 const nodemailer = require('nodemailer');
 
 exports.sendEmail = (req, res, next) => {

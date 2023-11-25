@@ -1,6 +1,0 @@
-const express = require ('express');
-const controller = require('../controllers/emailController');
-const router = express.Router();
-  
-//send an email
-router.post('/send-email', controller.sendEmail);

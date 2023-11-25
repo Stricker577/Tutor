@@ -1,4 +1,4 @@
-<%- include('../partials/navbar.ejs')%>
+<%- include('../partials/navbar.ejs') %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,32 +10,16 @@
         <div class="grid-item">
           <div class="label">Upcoming Appointments</div>
           <div class = "scrollbox">
-            <div class="examples">John Doe-ITSC 1213 12/10/2023 3:00PM ET</div>
-            <div class="examples">Jane Doe-MATH 3181 12/13/2023 12:30PM ET</div>
-            <div class="examples">Jack Doe-MATH 1241 12/14/2023 12:30PM ET</div>
-            <div class="examples">Jill Doe-ITSC 3246 12/14/2023 4:00PM ET</div>
-            <div class="examples">John Doe-ITSC 1213 12/17/2023 3:00PM ET</div>
-            <div class="examples">Jane Doe-MATH 3181 12/20/2023 12:30PM ET</div>
-            <div class="examples">Jack Doe-MATH 1241 12/21/2023 12:30PM ET</div>
-            <div class="examples">Jill Doe-ITSC 3246 12/21/2023 4:00PM ET</div>
-            <div class="examples">John Doe-ITSC 1213 12/24/2023 3:00PM ET</div>
-            <div class="examples">Jane Doe-MATH 3181 12/27/2023 12:30PM ET</div>
+            <% appointments.forEach(function(appointment) { %>
+              <div class="examples">
+                <%= appointment.student.name %>-<%= appointment.course %> <%= appointment.date.toISOString().slice(0, 16).replace('T', ' ') %>
+              </div>
+            <% }); %>
           </div>
-
         </div>
-        <div class="grid-item">
-          <div class = "buttons">
-          <button class = button-text>
-          <div class="text">Create Appointment</div>
-          </button> 
-          </button>
-          <button class = button-text>
-          <div class="text">Delete Appointment</div>
-          </button> 
-        </div>
-
-        </div>
+        <!-- Other content -->
       </div>
-
     </div>
-<%- include('../partials/footer.ejs')%>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

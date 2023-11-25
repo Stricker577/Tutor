@@ -1,40 +1,38 @@
 <%- include('../partials/navbar.ejs')%>
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
+
   <head>
     <link rel="stylesheet" href="/css/add_appointment.css" />
   </head>
+
   <body>
     <div class="home-page">
-      <div class = "add_appointment">
-        <div class = "grid-container">
-        
+      <div class="add_appointment">
+        <div class="grid-container">
           <div class="grid-item">
-            <form action="/action_page.php">
-
-              <label for="name"><b>Name:</b></label>
-              <input type="text" placeholder="Enter Student Name" name="name">
-            
-                <label for="email"><b>Email:</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-            
-                <label for="course"><b>Course:</b></label>
-                <input type="text" placeholder="Enter Course" name="course">
-
-                <label for="date"><b>Date:</b></label>
-                <input type="datetime-local" name="date" required>
-
-                <div class="clearfix">
-                  <a>
-                  <button type="submit" class="addbtn">Create Appointment</button>
-                </a>
-                </div>
+            <form action="/add-appointment" method="POST">
+              <label for="student">Select Student:</label>
+              <select name="student" id="student">
+                <% students.forEach(function(student) { %>
+                  <option value="<%= student._id %>">
+                    <%= student.name %>
+                  </option>
+                  <% }); %>
+              </select>
+              <label for="course"><b>Course:</b></label>
+              <input type="text" placeholder="Enter Course" name="course">
+              <label for="date"><b>Date:</b></label>
+              <input type="datetime-local" name="date" required>
+              <div class="clearfix">
+                <input class="submit" type="submit" value="Add Student">
+              </div>
             </form>
-  
           </div>
         </div>
       </div>
     </div>
   </body>
-</html>
-<%- include('../partials/footer.ejs')%>
+
+  </html>
+  <%- include('../partials/footer.ejs')%>

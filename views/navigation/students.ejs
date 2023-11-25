@@ -1,4 +1,4 @@
-<%- include('../partials/navbar.ejs')%>
+<%- include('../partials/navbar.ejs') %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,45 +6,22 @@
   </head>
   <body>
     <div class="students_page">
-      <a>
+      <a href="/path-to-add-student-form">
         <button class="addstudent">Add Student</button>
-        </a>
+      </a>
       <div class="grid-container">
-        <div class="grid-item">
-          <img class="img" src="/images/student_profile.png" />
+        <% students.forEach(function(student) { %>
+          <div class="grid-item">
+            <img class="img" src="/images/student_profile.png" />
             <div class="examples">
-                <p>Name: John Doe</p>
-                <p>Courses: ITSC 1213</p>
-                <p>Email: johndoe@gmail.com</p>
-          </div>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="/images/student_profile.png" />
-              <div class="examples">
-                <p>Name: Jane Doe</p>
-                <p>Courses: MATH 3181</p>
-                <p>Email: janedoe@gmail.com</p>
+              <p>Name: <%= student.name %></p>
+              <p>Courses: <%= student.courses.join(', ') %></p>
+              <p>Email: <%= student.email %></p>
             </div>
           </div>
-          <div class="grid-item">
-            <img class="img" src="/images/student_profile.png" />
-              <div class="examples">
-                <p>Name: Jack Doe</p>
-                <p>Courses: MATH 1241</p>
-                <p>Email: jackdoe@gmail.com</p>
-            </div>
-          </div>
-          <div class="grid-item">
-            <img class="img" src="/images/student_profile.png" />
-              <div class="examples">
-                <p>Name: Jill Doe</p>
-                <p>Courses: ITSC 3246</p>
-                <p>Email: jilldoe@gmail.com</p>
-            </div>
-          </div>
-
-        </div>
+        <% }); %>
       </div>
-
     </div>
-<%- include('../partials/footer.ejs')%>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

@@ -3,7 +3,7 @@ const passport = require('passport');
 const app = express();
 
 exports.login = passport.authenticate('google', { scope: ['profile', 'email'] }); 
-
+/*
 app.get('/auth/google/callback', 
     passport.authenticate('google', { failureRedirect: '/login' }),
     function(req, res) {
@@ -14,7 +14,7 @@ app.get('/auth/google/callback',
         res.send(req.user);
     }
 );
-
+*/
 app.listen(3000, () => console.log('Server started on port 3000'));
 
 exports.googleCallback = (req, res, next) => {

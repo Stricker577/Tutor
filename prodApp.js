@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-require('./config/passportConfig')(passport);
+require('./middlewares/passportConfig')(passport);
 
 //configure routers
 const navRoutes = require('./routes/navRoutes');

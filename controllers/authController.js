@@ -14,9 +14,9 @@ app.get('/auth/google/callback',
         res.send(req.user);
     }
 );
-*/
-app.listen(3000, () => console.log('Server started on port 3000'));
 
+app.listen(3000, () => console.log('Server started on port 3000'));
+*/
 exports.googleCallback = (req, res, next) => {
   passport.authenticate('google', (err, user, info) => {
     if (err) {

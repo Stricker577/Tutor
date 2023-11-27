@@ -7,6 +7,10 @@ router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
 
+router.get('/google/redirect', (req, res) => {
+    res.send('test');
+});
+
 router.get('/auth/google', authController.login);
 
 router.get('/auth/google/callback', authController.googleCallback);

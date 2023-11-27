@@ -13,18 +13,6 @@ module.exports = function (passport) {
       }, () => {
     })
   )
-
-  // used to serialize the user for the session
-  passport.serializeUser((user, done) => {
-    done(null, user.id)
-  })
-
-  // used to deserialize the user
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-			done(err, user);
-		});
-  })
 }
 
 

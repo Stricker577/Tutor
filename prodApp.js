@@ -78,8 +78,8 @@ app.get('/', (req, res)=>{
 app.use('/', navRoutes);
 app.use('/', indexRoutes);
 app.use('/', authRoutes);
-app.use('/', studRoutes);
-app.use('/', appointRoutes);
+//app.use('/', studRoutes);
+//app.use('/', appointRoutes);
 
 //error handling
 app.use((req, res, next)=> {

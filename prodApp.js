@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+require('dotenv').config();
 require('./middlewares/passportConfig')(passport);
 
 //configure routers

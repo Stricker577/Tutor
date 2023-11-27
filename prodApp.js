@@ -41,7 +41,7 @@ app.use(express.static('public'))
 //mount middlware
 app.use(
     session({
-        secret: env.SESSION_SECRET,
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         store: new MongoStore({mongoUrl: 'mongodb://10.142.0.2:27017/tutor'}),

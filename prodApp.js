@@ -45,8 +45,8 @@ app.use(express.static('public'))
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: false,
+        resave: true,
+        saveUninitialized: true,
         store: new MongoStore({mongoUrl: 'mongodb://10.142.0.2:27017/tutor'}),
         cookie: {maxAge: 60*60*1000}
         })

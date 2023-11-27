@@ -12,9 +12,7 @@ module.exports = function (passport) {
 		    passReqToCallback: true
       },
 
-      async (accessToken, refreshToken, profile, cb) => {
-
-        return cb(null, profile);
+      async (accessToken, refreshToken, profile, done) => {
         //get the user data from google 
         const newUser = {
           googleId: profile.id,

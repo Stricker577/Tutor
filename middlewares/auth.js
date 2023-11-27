@@ -1,1 +1,0 @@
-//Code for checking if someone is logged in

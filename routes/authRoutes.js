@@ -7,7 +7,7 @@ router.get('/auth/google', passport.authenticate('google', { scope: ['profile','
 router.get(
   '/auth/google/callback',
   passport.authenticate('google', { 
-		successRedirect: '/auth/google/success',
+		successRedirect: '/home_page',
     failureRedirect: '/auth/google/failure'
 	 }),
   (req, res, next) => {

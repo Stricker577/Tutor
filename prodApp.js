@@ -15,8 +15,8 @@ require('./middlewares/passportConfig')(passport);
 const navRoutes = require('./routes/navRoutes');
 const authRoutes = require('./routes/authRoutes');
 const indexRoutes = require('./routes/indexRoutes');
-const studRoutes = require('./routes/studRoutes');
-const appointRoutes = require('./routes/appointRoutes');
+//const studRoutes = require('./routes/studRoutes');
+//const appointRoutes = require('./routes/appointRoutes');
 
 //create the app
 const app = express();

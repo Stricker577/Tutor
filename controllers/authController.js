@@ -2,14 +2,6 @@ const express = require('express');
 const passport = require('passport');
 const app = express();
 
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
-
 exports.login = passport.authenticate('google', { scope: ['profile', 'email'] }); 
 /*
 app.get('/auth/google/callback', 

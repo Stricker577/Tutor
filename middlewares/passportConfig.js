@@ -2,6 +2,21 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose')
 const User = require('../models/user')
 
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.use(new GoogleStrategy({
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    // Here, you would find or create a user in your database
+    // For demonstration, we just return the Google profile
+    return cb(null, profile);
+  }
+));
+
+
 module.exports = function (passport) {
   passport.use(
     new GoogleStrategy(
@@ -12,7 +27,9 @@ module.exports = function (passport) {
 		    passReqToCallback: true
       },
 
-      async (accessToken, refreshToken, profile, done) => {
+      async (accessToken, refreshToken, profile, cb) => {
+
+        return cb(null, profile);
         //get the user data from google 
         const newUser = {
           googleId: profile.id,

@@ -15,6 +15,8 @@ require('./middlewares/passportConfig')(passport);
 const navRoutes = require('./routes/navRoutes');
 const authRoutes = require('./routes/authRoutes');
 const indexRoutes = require('./routes/indexRoutes');
+const studRoutes = require('./routes/studRoutes');
+const appointRoutes = require('./routes/appointRoutes');
 
 //create the app
 const app = express();
@@ -76,6 +78,8 @@ app.get('/', (req, res)=>{
 app.use('/', navRoutes);
 app.use('/', indexRoutes);
 app.use('/', authRoutes);
+app.use('/', studRoutes);
+app.use('/', appointRoutes);
 
 //error handling
 app.use((req, res, next)=> {

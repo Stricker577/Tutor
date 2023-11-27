@@ -34,17 +34,17 @@ exports.create = (req, res, next) => {
 
 
 //TODO : Edit functionality
-exports.edit = (req, res, next) => {
+//exports.edit = (req, res, next) => {
 
-};
+//};
 
 
 //TODO : Update functionality
-exports.update = (req, res, next) => {
+//exports.update = (req, res, next) => {
 
-};
+//};
 
 //TODO : Delete functionality
-exports.delete = (req, res, next) => {
+//exports.delete = (req, res, next) => {
 
-};
+//};

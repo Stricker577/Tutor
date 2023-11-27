@@ -5,18 +5,18 @@ const {validateId, validateResult, validateAppointment} = require('../middleware
 const router = express.Router();
 
 //GET /views: displays the items information
-router.get('/add-appointment', validateId, controller.studentInfo);
+router.get('/add-appointment/info', validateId, controller.studentInfo);
 
 //POST /views: create a new story
 router.post('/add-appointment', validateResult, validateAppointment, controller.create);
 
 //GET /views/:id/edit: edit an item
-router.get('/add-appointment', validateId, controller.edit);
+router.get('/add-appointment/edit', validateId, controller.edit);
 
 //PUT /views/:id: update an item
-router.put('/add-appointment', validateId, validateResult, validateAppointment, controller.update);
+router.put('/add-appointment/update', validateId, validateResult, validateAppointment, controller.update);
 
 //DELETE /views/:id: delete an item
-router.delete('/add-appointment', validateId, controller.delete);
+router.delete('/add-appointment/delete', validateId, controller.delete);
 
 module.exports = router;

@@ -12,7 +12,7 @@
         <div class="grid-container">
           <div class="grid-item">
             <form action="/add-appointment" method="POST">
-              <label for="student">Select Student:</label>
+              <label for="student"><b>Select Student:</b></label>
               <select name="student" id="student">
                 <% students.forEach(function(student) { %>
                   <option value="<%= student._id %>">
@@ -25,7 +25,7 @@
               <label for="date"><b>Date:</b></label>
               <input type="datetime-local" name="date" required>
               <div class="clearfix">
-                <input class="submit" type="submit" value="Add Student">
+                <input class="submit" type="submit" value="Add Appointment">
               </div>
             </form>
           </div>

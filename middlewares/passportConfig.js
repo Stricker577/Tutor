@@ -9,11 +9,15 @@ passport.serializeUser((user, done) => {
 })
 
 // used to deserialize the user
-passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
     done(null, user);
-  });
-})
+  } catch (error) {
+    done(error);
+  }
+});
+
 
 module.exports = function (passport) {
   passport.use(

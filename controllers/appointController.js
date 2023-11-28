@@ -31,6 +31,15 @@ exports.create = (req, res, next) => {
         next(err);
     });
 };
+ 
+exports.getAllAppointments = async (req, res, next) => {
+    try {
+        const appointments = await AppointmentModel.find(); // Fetch all appointments
+        res.render('navigation/appointments', { appointments }); // Pass them to the view
+    } catch (error) {
+        next(error);
+    }
+};
 
 
 //TODO : Edit functionality

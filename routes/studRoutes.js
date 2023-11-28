@@ -4,14 +4,11 @@ const {validateId, validateResult, validateStudent} = require('../middlewares/va
 
 const router = express.Router();
 
-//GET /views: displays the items information
-router.get('/add-student/:id', validateId, controller.studentInfo);
+//GET /views: displays all students
+router.get('/students', controller.getAllStudents);
 
 //POST /views: create a new story
 router.post('/add-student', validateResult, validateStudent, controller.create);
-
-// In navRoutes.js
-router.get('/students', controller.getAllStudents);
 
 //GET /views/:id/edit: edit an item
 //router.get('/add-student/edit', validateId, controller.edit);

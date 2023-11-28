@@ -14,9 +14,6 @@ router.get('/contact', controller.contact);
 //GET /Index: home page
 router.get('/home_page', controller.home_page);
 
-//GET /Index: appointments page
-router.get('/appointments', controller.appointments);
-
 //GET /Index: create account page
 router.get('/create_account', controller.create_account);
 

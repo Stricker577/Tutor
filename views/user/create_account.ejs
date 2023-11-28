@@ -9,15 +9,10 @@
       <div class = "sign-up">
         <div class = "grid-container">
           <div class="grid-item">
-            <img class="photo" src="/images/profile.jpg" />
-            <form action="/action_page.php">
-              <label for="img">Upload Photo:</label>
-              <input type="file" id="img" name="img" accept="image/*">
-            </form>          
-          </div>
-          <div class="grid-item">
-            <form action="/action_page.php">
-            
+            <form action='add-student' method='POST'>
+                <img class="photo" src="/images/profile.jpg" />
+                <label for="img">Upload Photo:</label>
+                <input type="file" id="img" name="img" accept="image/*">      
                 <label for="email"><b>Email</b></label>
                 <input type="text" placeholder="Enter Email" name="email" required>
             
@@ -29,13 +24,8 @@
 
                 <label for="bio"><b>Bio</b></label>
                 <textarea id="bio" name="bio" rows="5" cols="100"></textarea>
-                
-            
-                <div class="clearfix">
-                  <button type="submit" class="signupbtn">Create Account</button>
-                </div>
+                <input class="submit" type="submit" value="Create Student">
             </form>
-  
           </div>
         </div>
       </div>

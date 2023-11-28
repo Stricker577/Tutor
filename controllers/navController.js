@@ -19,7 +19,7 @@ exports.students = (req, res)=>{
     res.render('navigation/students');
 }
 
-exports.appointments = (req, res)=>{
+exports.appointments = async (req, res) => {
     res.render('navigation/appointments');
 }
 
@@ -29,4 +29,12 @@ exports.profile = (req, res)=>{
 
 exports.create_account = (req, res)=>{
     res.render('user/create_account');
+}
+
+exports.add_appointment = async (req, res) => {
+      res.render('navigation/add_appointment'); 
+}
+
+exports.add_student = (req, res)=>{
+    res.render('navigation/add_student');
 }

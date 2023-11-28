@@ -5,7 +5,7 @@ const {validateId, validateResult, validateStudent} = require('../middlewares/va
 const router = express.Router();
 
 //GET /views: displays the items information
-router.get('/add-student/info', validateId, controller.studentInfo);
+router.get('/add-student/:id', validateId, controller.studentInfo);
 
 //POST /views: create a new story
 router.post('/add-student', validateResult, validateStudent, controller.create);

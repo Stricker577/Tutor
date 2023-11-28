@@ -18,7 +18,7 @@ exports.create = (req, res, next) => {
 exports.getAllAppointments = async (req, res, next) => {
     try {
         const appointments = await AppointmentModel.find().populate('student'); // Fetch all appointments
-        res.render('navigation/appointments', { appointments, students }); // Pass them to the view
+        res.render('navigation/appointments', { appointments }); // Pass them to the view
     } catch (error) {
         next(error);
     }

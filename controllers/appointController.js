@@ -6,7 +6,7 @@ exports.create = (req, res, next) => {
     let appointment = new model(req.body);
     appointment.author = req.session.user;
     appointment.save()
-    .then(appointment=>res.redirect('/navigation/appointments'))
+    .then(appointment=>res.redirect('/appointments'))
     .catch(err=>{
         if(err.name === 'ValidationError') {
             err.status = 400;

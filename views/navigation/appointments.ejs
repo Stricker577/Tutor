@@ -10,7 +10,7 @@
           <div class = "scrollbox">
             <% appointments.forEach(function(appointment) { %>
               <div class="examples">
-                <%= appointment.student.name %>-<%= appointment.course %> <%= appointment.date.toISOString().slice(0, 16).replace('T', ' ') %>
+                <%= appointment.student.name %>-<%= appointment.courses %> <%= appointment.date.toISOString().slice(0, 16).replace('T', ' ') %>
               </div>
             <% }); %>
           </div>

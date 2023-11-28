@@ -1,3 +1,5 @@
+const StudentModel = require('../models/students');
+
 //index page for the website
 exports.index = (req, res)=>{
     res.render('./index', { userinfo: req.user });
@@ -28,7 +30,12 @@ exports.create_account = (req, res)=>{
 }
 
 exports.add_appointment = async (req, res) => {
-      res.render('navigation/add_appointment'); 
+    try {
+        const students = await StudentModel.find(); // Fetch all students
+        res.render('navigation/add_appointment', { students }); // Pass them to the view
+    } catch (error) {
+        next(error);
+    }
 }
 
 exports.add_student = (req, res)=>{

@@ -9,23 +9,18 @@
       <div class = "profile">
         <div class = "grid-container">
           <div class="grid-item">
-            <img class="photo" src="/images/profile.jpg" />
-            <form action="/action_page.php">
-              <label for="img">Upload Photo:</label>
-              <input type="file" id="img" name="img" accept="image/*">
-            </form>          
+            <% if (user.thumbnail) { %>
+              <img class="photo" src="<%= user.thumbnail %>" />
+            <% } else { %>
+              <img class="photo" src="/images/profile.jpg" />
+            <% } %>
+            <!-- Upload Photo form here, if applicable -->
           </div>
           <div class="grid-item">
-            <p>Name: Your Name</p>
-            <p>Courses Tutoring: ITSC 1213, ITSC 3146, MATH 1241, MATH 3181</p>
-            <p>Email: yourname@gmail.com</p>
-            <form action="/action_page.php">
-              <label for="bio"><b>Bio:</b></label>
-                <textarea id="bio" name="bio" rows="5" cols="80"></textarea>
-                <div class="clearfix">
-                  <button type="submit" class="resetbtn">Reset Password</button>
-                </div>
-            </form>
+            <p>Name: <%= user.firstName %> <%= user.lastName %></p>
+            <!-- Add courses tutoring if applicable -->
+            <p>Email: <%= user.email %></p>
+            <!-- Bio form here, if applicable -->
           </div>
         </div>
       </div>

@@ -51,9 +51,11 @@ body, html{
   button {
     background-color: #368f4f;
     color: white;
-    margin-bottom: 35px;
+    padding: 14px 20px;
+    margin: 8px 0;
     border: none;
     cursor: pointer;
+
   }
 
   .text {

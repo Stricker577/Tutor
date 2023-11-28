@@ -2,77 +2,44 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose')
 const User = require('../models/user')
 
+// used to serialize the user for the session
+passport.serializeUser((user, done) => {
+  done(null, user.id)
+})
+
+// used to deserialize the user
+passport.deserializeUser((id, done) => {
+  User.findById(id, (err, user) => {
+    done(null, user);
+  });
+})
+
 module.exports = function (passport) {
   passport.use(
-    new GoogleStrategy(
-      {
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: '/auth/google/callback',
-		    passReqToCallback: true
-      }, () => {
+    new GoogleStrategy({
+        // options for google strategy
+        clientID: keys.google.clientID,
+        clientSecret: keys.google.clientSecret,
+        callbackURL: '/auth/google/redirect'
+    }, (accessToken, refreshToken, profile, done) => {
+        // check if user already exists in our own db
+        User.findOne({googleId: profile.id}).then((currentUser) => {
+            if(currentUser){
+                // already have this user
+                console.log('user is: ', currentUser);
+                done(null, currentUser);
+            } else {
+                // if not, create user in our db
+                new User({
+                    googleId: profile.id,
+                    username: profile.displayName,
+                    thumbnail: profile._json.image.url
+                }).save().then((newUser) => {
+                    console.log('created new user: ', newUser);
+                    done(null, newUser);
+                });
+            }
+        });
     })
-  )
+  );
 }
-
-
-/*
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const mongoose = require('mongoose')
-const User = require('../models/user')
-
-module.exports = function (passport) {
-  passport.use(
-    new GoogleStrategy(
-      {
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: '/auth/google/callback',
-		    passReqToCallback: true
-      },
-
-      async (accessToken, refreshToken, profile, done) => {
-        console.log(profile);
-        //get the user data from google 
-        const newUser = {
-          googleId: profile.id,
-          displayName: profile.displayName,
-          firstName: profile.name.givenName,
-          lastName: profile.name.familyName,
-          image: profile.photos[0].value,
-          email: profile.emails[0].value
-        }
-
-        try {
-          //find the user in our database 
-          let user = await User.findOne({ googleId: profile.id })
-
-          if (user) {
-            //If user present in our database.
-            done(null, user)
-          } else {
-            // if user is not preset in our database save user data to database.
-            user = await User.create(newUser)
-            done(null, user)
-          }
-        } catch (err) {
-          console.error(err)
-        }
-      }
-    )
-  )
-
-  // used to serialize the user for the session
-  passport.serializeUser((user, done) => {
-    done(null, user.id)
-  })
-
-  // used to deserialize the user
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-			done(err, user);
-		});
-  })
-}
-
-*/

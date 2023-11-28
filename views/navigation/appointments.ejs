@@ -4,9 +4,6 @@
   </head>
   <body>
     <div class="appointments_page">
-      <a href="/add_appointment">
-        <button class="add_appointment">Add Appointment</button>
-      </a>
       <div class="grid-container">
         <div class="grid-item">
           <div class="label">Upcoming Appointments</div>
@@ -18,7 +15,16 @@
             <% }); %>
           </div>
         </div>
-        <!-- Other content -->
+        <div class="grid-item">
+          <div class = "buttons">
+          <button class = button-text>
+            <a class="text" href="/add_appointment">Create Appointment</a>
+          </button> 
+          </button>
+          <button class = button-text>
+            <a class="text" href="/home_page">Delete Appointment</a>
+          </button> 
+        </div>
       </div>
     </div>
   </body>

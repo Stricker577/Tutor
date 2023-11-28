@@ -21,7 +21,7 @@ body, html{
 .scrollbox{
   border: 1px solid #ccc;
   width: 100%;
-  height:100%;
+  height:75%;
   overflow: scroll;
 }
 

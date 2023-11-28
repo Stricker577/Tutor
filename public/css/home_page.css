@@ -33,7 +33,6 @@ body, html{
     height: 50px;
     cursor: pointer;
     text-align: center;
-    background-color: #368f4f;
     box-shadow: 0px 4px 4px #00000040;
     -webkit-text-stroke: 1px #000000;
     font-family: "Hind-Regular", Helvetica;
@@ -54,7 +53,6 @@ body, html{
     margin: 8px 0;
     border: none;
     cursor: pointer;
-
   }
 
   .text {

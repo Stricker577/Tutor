@@ -17,7 +17,7 @@ const authRoutes = require('./routes/authRoutes');
 const indexRoutes = require('./routes/indexRoutes');
 const studRoutes = require('./routes/studRoutes');
 const appointRoutes = require('./routes/appointRoutes');
-const profileRoutes = require('./routes/profile-routes');
+const profileRoutes = require('./routes/profileRoutes');
 
 //create the app
 const app = express();
@@ -78,10 +78,10 @@ app.get('/', (req, res)=>{
 //set up using all routers
 app.use('/', navRoutes);
 app.use('/', indexRoutes);
-app.use('/', authRoutes);
+app.use('/auth', authRoutes);
 app.use('/', studRoutes);
 app.use('/', appointRoutes);
-app.use('/', profileRoutes);
+app.use('/profile', profileRoutes);
 
 //error handling
 app.use((req, res, next)=> {

@@ -38,7 +38,7 @@ module.exports = function (passport) {
                     thumbnail: profile._json.image?.url,
                     firstName: profile.name.givenName,
                     lastName: profile.name.familyName,
-                    email: profile.emails[0].value
+                    email: profile.emails?.[0]?.value
                 }).save().then((newUser) => {
                     console.log('created new user: ', newUser);
                     done(null, newUser);

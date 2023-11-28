@@ -6,8 +6,8 @@ const UserSchema = new Schema({
   displayName: {type: String},
   firstName: {type: String},
   lastName: {type: String},
-  image: {type: String},
-  email:{type:String},
+  image: {type: Image},
+  email:{type: String},
   createdAt: {type: Date,default: Date.now,}
 });
 

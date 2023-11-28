@@ -6,6 +6,7 @@ const StudentSchema = new Schema({
     courses: {type: String, required: [true, 'Users are required']},
     email: {type: String, required: [true, 'Email is required']},
     author: {type: Schema.Types.ObjectId, ref:'User'},
+    image: {type: Image},
 },
 {timestamps: true, collection: 'Students'}
 );

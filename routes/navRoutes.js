@@ -20,9 +20,6 @@ router.get('/students', controller.students);
 //GET /Index: appointments page
 router.get('/appointments', controller.appointments);
 
-//GET /Index: profile page
-router.get('/profile', controller.profile);
-
 //GET /Index: create account page
 router.get('/create_account', controller.create_account);
 

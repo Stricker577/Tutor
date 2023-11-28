@@ -27,7 +27,7 @@ body, html{
     background-color: inherit;
   }
 
-  .button-text {
+  .button-text, .text {
     width: 350px;
     height: 50px;
     cursor: pointer;
@@ -55,4 +55,8 @@ body, html{
     border: none;
     cursor: pointer;
 
+  }
+
+  .text {
+    text-decoration: none;
   }

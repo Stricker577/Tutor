@@ -32,6 +32,16 @@ exports.create = (req, res, next) => {
     });
 };
 
+exports.getAllStudents = async (req, res, next) => {
+    try {
+        const students = await StudentModel.find(); // Fetch all students
+        res.render('navigation/students', { students }); // Pass them to the view
+    } catch (error) {
+        next(error);
+    }
+};
+
+
 /*
 //TODO : Edit functionality
 exports.edit = (req, res, next) => {

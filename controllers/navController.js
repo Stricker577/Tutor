@@ -23,10 +23,6 @@ exports.appointments = async (req, res) => {
     res.render('navigation/appointments');
 }
 
-exports.profile = (req, res)=>{
-    res.render('user/profile');
-}
-
 exports.create_account = (req, res)=>{
     res.render('user/create_account');
 }
